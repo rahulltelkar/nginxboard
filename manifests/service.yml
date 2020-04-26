@@ -1,10 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: rahulltelkarnginxboard
+  name: rahul-service
 spec:
-    type: LoadBalancer
-    ports:
-    - port: 8080 
-    selector:
-        app: rahulltelkarnginxboard
+  selector:
+    app: rahulltelkarnginxboard
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: ClusterIP
